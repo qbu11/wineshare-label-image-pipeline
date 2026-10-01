@@ -1,0 +1,37 @@
+{
+  "name": "wineshare-label-image-pipeline",
+  "version": "1.0.0",
+  "description": "Byte-compatible extraction of the WineShare WeChat mini-program wine-label recognition image pipeline (sharp-based canonicalization), with the full recognition contract for benchmark parity.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "bin": {
+    "wineshare-canonicalize": "dist/cli.js"
+  },
+  "main": "dist/canonicalize.js",
+  "types": "dist/canonicalize.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepack": "npm run build",
+    "test": "npm run build && node --test dist/*.test.js"
+  },
+  "dependencies": {
+    "sharp": "0.35.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.0"
+  },
+  "keywords": [
+    "wine-label",
+    "image-canonicalization",
+    "sharp",
+    "vision-model-benchmark",
+    "wechat-miniprogram"
+  ]
+}
